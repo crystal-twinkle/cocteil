@@ -1,18 +1,22 @@
 import {useState} from 'react';
 
-function CardSwitch({ pics }) {
-  const [index, setIndex] = useState(0);
+const SwitchType  = {
+  Text: 0,
+  Picture: 1,
+}
 
-  const click = () => {
-    setIndex(index+1);
-    if (index===pics.length - 1) {
-      setIndex(0);
-    }
-  }
+function CardSwitch({ pics }) {
+  const [type, setType] = useState(SwitchType.Text);
+  const keys = Object.keys(SwitchType);
+
+  const toggleType = () => {
+    setType(type === keys.length - 1 ? 0 : type + 1);
+  };
+
   return (
     <div>
-      <div>{pics[index]}</div>
-      <button onClick={click}>text</button>
+      <div>{pics[type]}</div>
+      <button onClick={toggleType}>{keys[type]}</button>
     </div>
   );
 }
