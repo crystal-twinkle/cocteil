@@ -1,0 +1,10 @@
+.form-adder {
+  max-width: 120px;
+}
+
+.input-adder {
+  max-width: 100px;
+  width: 75vw;
+  margin-bottom: 0.5rem;
+  position: relative;
+}
