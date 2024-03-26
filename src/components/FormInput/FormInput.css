@@ -1,0 +1,22 @@
+.input-adder {
+  max-width: 100px;
+  width: 75vw;
+  position: relative;
+}
+
+.input_error {
+  color: red;
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+.after::after {
+  --tw-content: '*';
+  content: var(--tw-content);
+  color: rgb(239 68 68);
+}
+
+.input_naming {
+  font-size: 1rem;
+  margin: 0;
+}
