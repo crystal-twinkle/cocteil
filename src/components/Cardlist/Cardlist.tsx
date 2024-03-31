@@ -1,11 +1,14 @@
-import data from '../../data/data';
 import './Cardlist.css';
-import CardSwitch from '../CardItem';
+import CardSwitch from '../CardItem/CardItem';
+import {useContext} from 'react';
+import {AppContext} from '../../contexts/app-context';
 
 function Cardlist() {
+  const {smiles}=useContext(AppContext);
+
   return (
     <div className="list">
-      {data.map((e, i) => (
+      {smiles.map((e, i) => (
         <div className="card" key={i}>
           <p className="card_name"> {e.name}</p>
           <CardSwitch pics={e.pic} index/>

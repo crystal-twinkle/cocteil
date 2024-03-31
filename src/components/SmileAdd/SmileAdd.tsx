@@ -28,7 +28,6 @@ function SmileAdd() {
       body: JSON.stringify(newData),
     })
       .then((r) => console.log(r.json()));
-    console.log(errors)
   };
 
   return (
