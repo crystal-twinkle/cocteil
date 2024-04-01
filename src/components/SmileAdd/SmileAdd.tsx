@@ -4,6 +4,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import {useForm} from 'react-hook-form';
 import smileValidationSchema from '../../utils/smileValidationSchema';
 import FormInput from '../FormInput/FormInput';
+import Button from '../UI/Button';
 
 function SmileAdd() {
   const {
@@ -35,7 +36,7 @@ function SmileAdd() {
       <form className='form-adder' onSubmit={handleSubmit(onSubmitForm)}>
         <FormInput type={"text"} error={errors.smilePic} register={register('smilePic')} naming={'smiley display'}/>
         <FormInput type={"text"} error={errors.smileText} register={register('smileText')} naming={'smiley text'}/>
-        <button>Add new smile</button>
+        <Button>Add new smile</Button>
       </form>
     </div>
   )

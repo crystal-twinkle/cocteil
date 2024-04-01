@@ -1,4 +1,4 @@
-import './Cardlist.css';
+import './Cardlist.scss';
 import CardSwitch from '../CardItem/CardItem';
 import {useContext} from 'react';
 import {AppContext} from '../../contexts/app-context';

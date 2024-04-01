@@ -1,4 +1,6 @@
 import {useState} from 'react';
+import Button from '../UI/Button';
+import './CardItem.scss';
 
 const SwitchType  = {
   Text: 0,
@@ -15,8 +17,8 @@ function CardSwitch({ pics }) {
 
   return (
     <div>
-      <div>{pics[type]}</div>
-      <button onClick={toggleType}>{keys[type]}</button>
+      <div className="display">{pics[type]}</div>
+      <Button onClick={toggleType}>{keys[type]}</Button>
     </div>
   );
 }
