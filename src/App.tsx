@@ -1,6 +1,6 @@
 import './App.css'
 import Cardlist from './components/Cardlist/Cardlist';
-import React, {useContext, useEffect} from 'react';
+import {useContext, useEffect} from 'react';
 import SmileAdd from './components/SmileAdd/SmileAdd';
 import {AppContext} from './contexts/app-context';
 

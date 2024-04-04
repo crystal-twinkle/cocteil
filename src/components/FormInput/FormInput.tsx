@@ -1,7 +1,17 @@
-import React from 'react';
 import './FormInput.css'
+import {DeepMap, FieldValues, UseFormRegister} from 'react-hook-form';
+import {IRegister} from '../../models/models';
 
-const FormInput = ({type,error, register, naming}) => {
+
+interface IFormInput {
+  type: string;
+  errors?: DeepMap<FieldValues, FieldValues>;
+  register: UseFormRegister<IRegister>;
+  naming: string;
+  add: keyof IRegister;
+}
+
+const FormInput = ({type, errors, register, naming, add}: IFormInput) => {
   return (
     <div>
       <p className="input_naming after">
@@ -10,10 +20,10 @@ const FormInput = ({type,error, register, naming}) => {
       <input
         className="input-adder"
         type={type}
-        {...register}
+        {...register(add)}
       />
       <p className="input_error">
-        {error?.message && error.message}
+        {errors?.message && errors.message}
       </p>
     </div>
   );

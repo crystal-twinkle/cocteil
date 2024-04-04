@@ -5,10 +5,8 @@ import React, {
   useMemo,
 } from 'react';
 
-interface ISmile {
-  name: string;
-  pic: string[];
-}
+import {ISmile} from '../models/models';
+
 
 export interface IAppContext {
   smiles: ISmile[];

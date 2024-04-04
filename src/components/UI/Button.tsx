@@ -1,7 +1,11 @@
-import React from 'react';
 import './Button.scss';
 
-const Button = ({onclick, children}) => {
+interface IButton {
+  onclick?: () => void;
+  children: string;
+}
+
+const Button = ({onclick, children}: IButton) => {
   return (
       <button className="button" onClick={onclick}>{children}</button>
   );

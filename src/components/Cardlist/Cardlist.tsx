@@ -1,5 +1,5 @@
 import './Cardlist.scss';
-import CardSwitch from '../CardItem/CardItem';
+import CardSwitch from '../CardItem/CardSwitch';
 import {useContext} from 'react';
 import {AppContext} from '../../contexts/app-context';
 

@@ -1,10 +1,10 @@
-import React from 'react';
 import './SmileAdd.css';
 import { yupResolver } from '@hookform/resolvers/yup';
 import {useForm} from 'react-hook-form';
 import smileValidationSchema from '../../utils/smileValidationSchema';
 import FormInput from '../FormInput/FormInput';
 import Button from '../UI/Button';
+import {IRegister} from '../../models/models';
 
 function SmileAdd() {
   const {
@@ -15,10 +15,10 @@ function SmileAdd() {
     resolver: yupResolver(smileValidationSchema()),
   });
 
-  const onSubmitForm = async (formData) => {
+  const onSubmitForm = async (formData: IRegister) => {
     const newData = {
-      name: formData.smilePic,
-      pic: formData.smileText
+      name: formData.smileText,
+      pic: formData.smilePic
     }
 
     fetch('/api', {
@@ -34,8 +34,8 @@ function SmileAdd() {
   return (
     <div className='form-wrap'>
       <form className='form-adder' onSubmit={handleSubmit(onSubmitForm)}>
-        <FormInput type={"text"} error={errors.smilePic} register={register('smilePic')} naming={'smiley display'}/>
-        <FormInput type={"text"} error={errors.smileText} register={register('smileText')} naming={'smiley text'}/>
+        <FormInput type={"text"} errors={errors.smilePic} register={register} naming={'smiley display'} add={'smilePic'}/>
+        <FormInput type={"text"} errors={errors.smileText} register={register} naming={'smiley text'} add={'smileText'}/>
         <Button>Add new smile</Button>
       </form>
     </div>

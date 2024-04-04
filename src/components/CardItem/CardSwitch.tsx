@@ -1,13 +1,19 @@
 import {useState} from 'react';
 import Button from '../UI/Button';
-import './CardItem.scss';
+import './CardSwitch.scss';
 
 const SwitchType  = {
   Text: 0,
   Picture: 1,
 }
 
-function CardSwitch({ pics }) {
+interface ICardSwitch {
+  pics: string[];
+  index: boolean;
+}
+
+
+function CardSwitch({ pics }: ICardSwitch) {
   const [type, setType] = useState(SwitchType.Text);
   const keys = Object.keys(SwitchType);
 
@@ -18,7 +24,7 @@ function CardSwitch({ pics }) {
   return (
     <div>
       <div className="display">{pics[type]}</div>
-      <Button onClick={toggleType}>{keys[type]}</Button>
+      <Button onclick={toggleType}>{keys[type]}</Button>
     </div>
   );
 }
